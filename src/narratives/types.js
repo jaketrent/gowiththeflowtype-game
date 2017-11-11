@@ -7,5 +7,6 @@ export type NarrativeId = Id
 export type Narrative = {
   id: NarrativeId,
   choiceText?: string,
-  choices?: NarrativeId[]
+  choices?: NarrativeId[],
+  text: string
 }
