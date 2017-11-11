@@ -13,7 +13,9 @@
     "run:watch": "nodemon dist/index",
     "start": "run-s build run",
     "start:watch": "run-p build:watch run:watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "run-s test:types test:code",
+    "test:code": "jest",
+    "test:types": "flow"
   },
   "keywords": [],
   "author": "jaketrent",
@@ -23,8 +25,11 @@
     "@commitlint/config-angular": "^4.3.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
+    "flow-bin": "^0.59.0",
     "husky": "^0.14.3",
+    "jest": "^21.2.1",
     "lint-staged": "^5.0.0",
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.2",

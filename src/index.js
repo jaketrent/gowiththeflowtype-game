@@ -1,1 +1,5 @@
-console.log('flowing')
+// @flow
+
+const amaze: string = 'message'
+
+console.log(amaze)
