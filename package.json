@@ -1,10 +1,12 @@
 {
   "name": "gowiththeflowtype-game",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "Codebase to demonstrate Flowtype",
   "main": "index.js",
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +15,14 @@
   "devDependencies": {
     "@commitlint/cli": "^4.3.0",
     "@commitlint/config-angular": "^4.3.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.8.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "node_modules/.bin/prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   }
 }
