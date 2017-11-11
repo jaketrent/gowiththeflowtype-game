@@ -1,5 +1,7 @@
 // @flow
 
-const amaze: string = 'message'
+import { html, render } from 'lit-html'
 
-console.log(amaze)
+const index = ({ name }) => html`Hi, ${name}`
+
+render(index({ name: 'Jake' }), document.getElementById('app'))

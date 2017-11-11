@@ -5,17 +5,13 @@
   "description": "Codebase to demonstrate Flowtype",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist --ignore spec.js",
-    "build:watch": "npm run build -- --watch",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged",
-    "run": "node dist/index",
-    "run:watch": "nodemon dist/index",
-    "start": "run-s build run",
-    "start:watch": "run-p build:watch run:watch",
+    "start": "webpack-dev-server",
     "test": "run-s test:types test:code",
     "test:code": "jest",
-    "test:types": "flow"
+    "test:types": "flow",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
   "author": "jaketrent",
@@ -23,22 +19,28 @@
   "devDependencies": {
     "@commitlint/cli": "^4.3.0",
     "@commitlint/config-angular": "^4.3.0",
-    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
     "flow-bin": "^0.59.0",
+    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-template": "^6.0.2",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^5.0.0",
-    "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.2",
-    "prettier": "^1.8.2"
+    "prettier": "^1.8.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "lint-staged": {
     "*.js": [
       "node_modules/.bin/prettier --single-quote --no-semi --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "lit-html": "^0.7.1"
   }
 }
