@@ -2,42 +2,56 @@
 
 import { html, render } from 'lit-html'
 
+import css from './index.css'
 import * as narratives from './narratives'
+import { style, title } from './common'
 
 const prompt = ({ css, narrative }) =>
   narrative.prompt &&
   html`
-  <h2>
+  <div class=${css.prompt}>
     ${narrative.prompt}
-  </h2>
+  </div>
 `
-const image = ({ css, narrative }) =>
-  narrative.image && html` <img src=${narrative.image} /> `
 
-const text = ({ css, narrative }) => html` <p>${narrative.text}</p>`
+const image = ({ css, narrative }) =>
+  narrative.image &&
+  html`
+  <img src=${narrative.image} />
+`
+
+const text = ({ css, narrative }) => html`
+  <p class=${css.text}>${narrative.text}</p>
+`
 
 const choice = ({ css, narrative }) => html`
-  <div>
-    <button>
+  <div class=${css.choice}>
+    <button class=${css.choiceButton}>
       ${narrative.choiceText}
     </button>
   </div>
 `
 
-const choices = ({ narrative }) =>
+const choices = props =>
   html`
-  <div>
-    ${narratives.getChoices(narrative).map(n => choice({ narrative: n }))}
+  <div class=${props.css.choices}>
+    ${narratives
+      .getChoices(props.narrative)
+      .map(n => choice({ ...props, narrative: n }))}
   </div>
 `
 
-const index = ({ narrative }) => html`
-  <h4>Go with the Flow</h4>
-  ${image({ narrative })}
-  ${text({ narrative })}
-  ${prompt({ narrative })}
-  ${choices({ narrative })}
+const index = style(css)(
+  props => html`
+  ${title()}
+  <div class=${css.content}>
+    ${image(props)}
+    ${text(props)}
+    ${prompt(props)}
+    ${choices(props)}
+  </div>
 `
+)
 
 const firstNarrative = narratives.find(1)
 if (firstNarrative)

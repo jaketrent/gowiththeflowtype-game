@@ -8,5 +8,6 @@ export type Narrative = {
   id: NarrativeId,
   choiceText?: string,
   choices?: NarrativeId[],
-  text: string
+  text: string,
+  prompt?: string
 }

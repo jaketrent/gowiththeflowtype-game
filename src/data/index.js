@@ -10,16 +10,17 @@ type RawNarrative = {
   id: NarrativeId,
   choiceText?: string,
   choices?: NarrativeId[],
-  text: string
+  text: string,
+  prompt?: string
 }
 
 const rawData: RawData = {
   narratives: [
     {
       id: 1,
-      text:
-        'Welcome to your adventure!  The future is bright.  You will meet it as:',
-      choices: [2, 3]
+      text: 'Welcome to your adventure!  The future is bright.',
+      choices: [2, 3],
+      prompt: 'Who will you be?'
     },
     {
       id: 2,
