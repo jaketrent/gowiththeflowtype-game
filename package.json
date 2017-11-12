@@ -46,6 +46,7 @@
     ]
   },
   "dependencies": {
-    "lit-html": "^0.7.1"
+    "lit-html": "^0.7.1",
+    "page": "^1.7.1"
   }
 }
