@@ -4,6 +4,7 @@ const postcssImport = require('postcss-import')
 const cssnext = require('postcss-cssnext')
 
 module.exports = {
+  devtool: 'cheap-eval-source-map',
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -44,7 +45,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: require('html-webpack-template'),
-      appMountId: 'app'
+      appMountId: 'app',
+      title: 'Go with the Flow Game'
     })
   ]
 }
