@@ -7,7 +7,7 @@ import type { RouteContext } from '../common/types'
 
 import css from './index.css'
 import * as narratives from '../narratives'
-import { style, title } from '../common'
+import { link, style, title } from '../common'
 
 const prompt = ({ css, narrative }) =>
   narrative.prompt &&
@@ -28,10 +28,12 @@ const text = ({ css, narrative }) => html`
 `
 
 const choice = ({ css, narrative }) => html`
-  <div class=${css.choice}>
-    <button class=${css.choiceButton}>
-      ${narrative.choiceText}
-    </button>
+ <div class=${css.choice}>
+    ${link({
+      css: { link: css.choiceButton },
+      href: '/' + narrative.id,
+      label: narrative.choiceText
+    })}
   </div>
 `
 
