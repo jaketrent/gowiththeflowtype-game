@@ -1,0 +1,31 @@
+@import "../common/vars.css";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.25rem;
+}
+.text {
+  font-size: 1.25em;
+}
+.code {
+  font-size: 6em;
+  font-weight: 800;
+  line-height: 1.5em;
+  color: var(--colorsPrimary);
+  text-shadow: 4px 4px 0 var(--colorsAccent1);
+}
+.start {
+  color: var(--colorsContrast);
+  background: var(--colorsPrimary);
+  text-decoration: none;
+}
+.start:hover,
+.start:focus,
+.start:active {
+  background: var(--colorsAccent1);
+}

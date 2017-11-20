@@ -9,7 +9,8 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -40,7 +41,7 @@ module.exports = {
   },
   devServer: {
     port: 1337,
-    historyApiFallback: true
+    historyApiFallback: { index: '/' }
   },
   plugins: [
     new CopyWebpackPlugin([
