@@ -23,6 +23,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.1",
     "css-loader": "^0.28.7",
     "flow-bin": "^0.59.0",
     "html-webpack-plugin": "^2.30.1",

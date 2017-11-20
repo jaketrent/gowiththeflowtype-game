@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const postcssImport = require('postcss-import')
@@ -8,7 +9,8 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+    publicPath: '/static/'
   },
   module: {
     rules: [
@@ -42,6 +44,12 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, 'static'),
+        to: path.join(__dirname, 'dist', 'static')
+      }
+    ]),
     new HtmlWebpackPlugin({
       inject: false,
       template: require('html-webpack-template'),

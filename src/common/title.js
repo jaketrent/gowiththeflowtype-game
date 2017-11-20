@@ -5,6 +5,8 @@ import style from './style'
 
 export default style(css)(
   props => html`
-  <h4 class=${props.css.title}>Flow</h4>
+  <h4 class=${
+    props.css.title
+  }><img src="/static/img/title.png" alt="Go with the Flow" /></h4>
 `
 )
