@@ -1,9 +1,17 @@
-@import "../common/vars.css";
+@import '../common/vars.css';
 
+.index {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  height: 100%;
+}
 .content {
+  display: grid;
+  grid-template-rows: 1fr auto;
   padding: 20px;
 }
-.image {}
+.image {
+}
 .text {
   color: #888;
   font-size: 1.25em;
@@ -12,8 +20,10 @@
   border-bottom: 1px solid black;
   margin-bottom: 16px;
 }
-.prompt {}
-.choices {}
+.prompt {
+}
+.choices {
+}
 .choice {
   display: block;
 }

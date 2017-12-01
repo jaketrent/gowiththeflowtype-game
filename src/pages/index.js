@@ -48,12 +48,18 @@ const choices = props =>
 
 const index = style(css)(
   props => html`
-  ${title()}
-  <div class=${css.content}>
-    ${image(props)}
-    ${text(props)}
-    ${prompt(props)}
-    ${choices(props)}
+  <div class="${css.index}">
+    ${title()}
+    <div class="${css.content}">
+      <div>
+        ${image(props)}
+        ${text(props)}
+      </div>
+      <div>
+        ${prompt(props)}
+        ${choices(props)}
+      </div>
+    </div>
   </div>
 `
 )
