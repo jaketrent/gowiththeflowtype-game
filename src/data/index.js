@@ -68,11 +68,12 @@ const rawData: RawData = {
     },
     {
       id: 6,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'But the King would not be fooled.  His wisdom was his ally.  Their platitudes failed the Piggies.',
+      choices: [50, 51],
+      prompt: "But it didn't matter, because they:",
       choiceText:
-        'Trick the king and the kingdom into giving up what they had, they would become the new heirs to the kingdom.'
+        'Trick the King and the kingdom into giving up what they had, they would become the new heirs to the kingdom.'
     },
     {
       id: 7,
@@ -150,9 +151,10 @@ const rawData: RawData = {
     },
     {
       id: 22,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'So they gathered together to plot how they might rise to the status of the King.  Easier, they decided, to take him down.  And thus they found the help of the Cyborg Piggies to help them do their deed.',
+      choices: [5, 6],
+      prompt: 'The Pigs were cunning.  They decided to:',
       choiceText:
         'A band of men who felt slighted by the meteoric rise of some -- to which group they saw themselves as wrongfully excluded.'
     },
@@ -278,9 +280,10 @@ const rawData: RawData = {
     },
     {
       id: 44,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'But the supposed wonders of the Pig kingdom were really incomparable.  Once it was clear the King would not succumb to their worm tongue, they lashed out with violence and obvious frustration.',
+      choices: [62, 63],
+      prompt: 'In a rage, they:',
       choiceText:
         'Told him of the wonders of the Cyborgs and the kingdom to be had in the Sty system.'
     },
@@ -300,6 +303,133 @@ const rawData: RawData = {
       choices: [27, 28],
       prompt: '',
       choiceText: "Thought he'd better bring in backup and sent out the call."
+    },
+    {
+      id: 50,
+      text:
+        'When he was without the castle and without a guard.  They scooped him up in their land craft and flew him away to the starship.',
+      choices: [55, 56],
+      prompt: 'But not before he:',
+      choiceText: 'Became impatient and ambushed the King anyway.'
+    },
+    {
+      id: 51,
+      text:
+        'He actually tried to create a peace treaty with the Cyborg Pigs, his sworn enemy.  They were not fooled.  But perhaps he would be.',
+      choices: [52, 53],
+      prompt: 'They:',
+      choiceText:
+        'Had time to wait for the King to trip up.  And soon, they found their opportunity.'
+    },
+    {
+      id: 52,
+      text:
+        'As soon as he was without the castle, they struck. They abducted him in their waiting starship and flew with greatest speed toward their home world.  As he was nabbed, the King saw his trouble and called upon his trusted servants, the Future Knights.  They received his call and gave chase.',
+      choices: [54, 59],
+      prompt: 'But their ship:',
+      choiceText:
+        'Lured him out of the castle with pretense of preparing for the peace summit.'
+    },
+    {
+      id: 53,
+      text:
+        'And so he came, faithful to the peace process.  But a King should learn to never trust a Pig.  For when he landed, he was summarily detained.',
+      choices: [60, 61],
+      prompt: 'But the Knights soon arrived:',
+      choiceText:
+        'Let him come to the Piggy homeworld in the Sty system for final talks and peace agreements.'
+    },
+    {
+      id: 54,
+      text:
+        "They found another ship and gave chase.  Thankfully, the King and the Piggies' ship hadn't escaped in total.  They raced again to his aid, pursing even to the Piggy homeworld in the Sty system.",
+      choices: [57, 58],
+      prompt: 'As they landed, they found',
+      choiceText: 'Malfunctioned, letting the King slip further away.'
+    },
+    {
+      id: 55,
+      text:
+        'The Future Knights were faithful friends to the King.  Upon hearing of his distress, they tracked him all the way to the Piggy homeworld in the Sty system.',
+      choices: [57, 58],
+      prompt: 'They landed and found:',
+      choiceText: 'Called upon his servants, the Future Knights.'
+    },
+    {
+      id: 56,
+      text:
+        "The beacon was setup to signal the King's greatest allies: the Future Knights.  Once they had calibrated to find the source of the beacon's call, they followed it all the way to the Sty system.",
+      choices: [57, 58],
+      prompt: 'They landed and found:',
+      choiceText: "Attached a homing beacon to the Piggies' ship"
+    },
+    {
+      id: 57,
+      text:
+        'But the Knights would not be deterred.  They knew their King was there somewhere, and it would be they who restored them to his rightful throne.',
+      choiceText: 'The Pigs had formed ranks against them.'
+    },
+    {
+      id: 58,
+      text:
+        'But the Knights would not be deterred.  They knew their King was there somewhere, and it would be they who restored them to his rightful throne.',
+      choiceText: 'That the King was nowhere to be found.'
+    },
+    {
+      id: 59,
+      text:
+        "Soon their ship was within range.  The Future Knights had to take a chance.  They weren't sure what else the Piggies had up their sleeves, and they moved quickly to save their king.  They fired on the Cyborg ship and shot it down.  It careened toward a nearby moon.  The Knights followed and landed to recover the King",
+      choices: [57, 58],
+      prompt: 'But when the landed, they realized:',
+      choiceText:
+        'Was even faster than they thought, and soon they overcame the Piggies.'
+    },
+    {
+      id: 60,
+      text:
+        'But the King was nowhere to be seen.  They cut into the ranks of the Pigs but were still unsure where they would find their beloved King.  But him they would!',
+      choiceText: 'Swinging their blades, they came out running.'
+    },
+    {
+      id: 61,
+      text:
+        'Amongst the fast numbers of Pigs, they could not see him.  They knew it would be an arduous search, but they were ready to see it through.  Their King would be returned to them!',
+      choiceText:
+        'They crept up behind the ranks of Cyborg Pigs, looking for their king.'
+    },
+    {
+      id: 62,
+      text:
+        'He refused, of course, but it was no matter.  They forced him into submission, and soon they were off.  He had, however, had a moment to relay his distress via the beacon on his person to his friends, the Future Knights.  They rushed to his aid.',
+      choices: [64, 65],
+      prompt: '',
+      choiceText: 'Fell upon him and ordered him to board their ship.'
+    },
+    {
+      id: 63,
+      text:
+        "Soon they were off.  The King had, however, had a moment to relay his distress via the beacon on his person to his friends, the Future Knights.  They rushed to find the Piggies before it was too late. Upon landing at the Piggy homeworld, they couldn't see their precious King",
+      choices: [57, 58],
+      prompt: 'The sighed heavily.',
+      choiceText:
+        'Summarily snatched him up, tossed him upon their greasy piggy backs, and were off with him.'
+    },
+    {
+      id: 64,
+      text:
+        'Their destination was the Piggy homeworld in the Sty system.  It was time for some barbeque!  But the Piggies were sly, and they did not disclose the location of the King.',
+      choices: [57, 58],
+      prompt: 'The Knights landed, but the King was unseen.',
+      choiceText: 'Following the beacon, they discovered his location.'
+    },
+    {
+      id: 65,
+      text:
+        "They tuned in on the beacon's listening device.  It was the Cyborg Pigs!  The Knights had sworn their allegiance to the King and knew where they could find these piggy fiends. They arrived on the Piggy homeworld.",
+      choices: [57, 58],
+      prompt: 'They did not see the King!',
+      choiceText:
+        "The beacon would tell the Knights about the cause of the King's distress."
     }
   ]
 }
