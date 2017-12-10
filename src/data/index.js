@@ -86,9 +86,10 @@ const rawData: RawData = {
     },
     {
       id: 8,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        "It actually wasn't much of a challenge.  Star Seeker or no, one could probably surmise that the perpetrator of the King's disappearance was his sworn enemy, the Cyborg Piggies.  But who would save him?  The sworn protectors of the King, the Future Knights, of course!",
+      choices: [57, 58],
+      prompt: 'They raced to the Piggy homeworld in the Sty system but found:',
       choiceText:
         'The royal Star Seekers to divine the location of the missing King Glitmore.'
     },
@@ -103,11 +104,12 @@ const rawData: RawData = {
     },
     {
       id: 10,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        "Before he had been cut down, the author had clearly drawn out that the King's assailants were plotting to take the poor king back to the Pig's homeworld in the Sty system.",
+      choices: [70, 71],
+      prompt: 'The Knights, wanting to retrieve their King:',
       choiceText:
-        'A hastily-scrawled note from one of the late witnesses to the king-napping.  The cyborg piggies were identified as the perpetrators.'
+        'A hastily-scrawled note from one of the late witnesses to the king-napping.  The Cyborg Piggies were identified as the perpetrators.'
     },
     {
       id: 11,
@@ -120,9 +122,10 @@ const rawData: RawData = {
     },
     {
       id: 12,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'The Future Knights took their time weighing their options.  The King was to be retrieved with great care.  Given their thoughtful planning, perhaps their remaining "chicken" nuggets would come in handy.',
+      choices: [72, 73],
+      prompt: 'They decided they could:',
       choiceText:
         'What they wanted to hear -- the location of the king -- but it was far too distant for them to immediately confirm.'
     },
@@ -135,9 +138,10 @@ const rawData: RawData = {
     },
     {
       id: 14,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'It would be an all out battle for the life of the King.  The hordes of Cyborg Pigs were sure to be repulsive and endless.  They prepared themselves for the coming ordeal.',
+      choices: [57, 58],
+      prompt: 'And so it was well, for when they disembarked, they saw:',
       choiceText:
         'Found themselves unable to catch up in time before they reached the Cyborg Piggy homeworld.'
     },
@@ -169,9 +173,10 @@ const rawData: RawData = {
     },
     {
       id: 24,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'But it was a half-hearted attempt.  How could he battle against his own family?  He wondered what his son was thinking.',
+      choices: [74, 75],
+      prompt: 'Finally, he',
       choiceText: 'Attempted to fight back.'
     },
     {
@@ -184,9 +189,10 @@ const rawData: RawData = {
     },
     {
       id: 26,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'His beacon was configured to signal his elite guard, the Future Knights.  After receiving the call, they were soon ready to rush to the aid of the King.  But when they arrived in the throne room, the King had already been taken by Piggies in their ships.',
+      choices: [29, 30],
+      prompt: 'Without wasting a moment, they:',
       choiceText: 'Engaged his own personal galactic location beacon.'
     },
     {
@@ -200,9 +206,10 @@ const rawData: RawData = {
     },
     {
       id: 28,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        "But traffic control was helpless to detain a rogue ship that didn't want to play nice.  It was up to the Knights to take direct pursuit.  And so they did -- all the way to the Piggy homeworld.  They were afraid of what they'd find there but were not ready to see what they saw.",
+      choices: [57, 58],
+      prompt: 'They discovered:',
       choiceText:
         'Called planetary air traffic control, ordering them to shut down all air traffic off planet.'
     },
@@ -211,14 +218,15 @@ const rawData: RawData = {
       text:
         'It would be a quick chase.  The Future Knights knew the Cyborg Pigs were cunning but slow.  Soon they caught up with the ship and hailed it.',
       choices: [31, 32],
-      prompt: 'Their mere presence of the Knights:',
+      prompt: 'The mere presence of the Knights:',
       choiceText: 'Reentered their ship and began pursuit'
     },
     {
       id: 30,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'Much to their dismay, the course of the Piggies was back to their home planet in the Sty System.  The battle there would be legendary!  After lengthy pursuit, they arrived there.',
+      choices: [57, 58],
+      prompt: 'But were surprised to find:',
       choiceText: 'Asked air traffic control to plot the course of the prey'
     },
     {
@@ -232,9 +240,10 @@ const rawData: RawData = {
     },
     {
       id: 32,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        'The Knights lost patience with their prey and shot down the ship.  It careened toward a distant planet surface and crashed.  When the Knights landed alongside and disembarked, they were not ready for what they saw.',
+      choices: [57, 58],
+      prompt: 'They found:',
       choiceText:
         'Propelled the Cyborgs onward.  They could not be caught and meet that fate.'
     },
@@ -246,9 +255,10 @@ const rawData: RawData = {
     },
     {
       id: 34,
-      text: '',
-      choices: [],
-      prompt: '',
+      text:
+        "The King's son, surprisingly, begged for their help.  The Pigs had betrayed him as well and help him as an extra hostage.  But where was the King anyway?",
+      choices: [57, 58],
+      prompt: 'The Knights realized:',
       choiceText:
         "Informed the King's son that they would avenge the King of this dead no matter the perpetrators."
     },
@@ -430,6 +440,92 @@ const rawData: RawData = {
       prompt: 'They did not see the King!',
       choiceText:
         "The beacon would tell the Knights about the cause of the King's distress."
+    },
+    {
+      id: 70,
+      text:
+        "But soon they thought better of it.  In order to gather the armada, which had long been languishing in dry dock, they would need time that they didn't have.  Their King must be saved -- and quick!  They boarded their ship and took flight toward the Cyborg home world.",
+      choices: [57, 58],
+      prompt: 'When they arrived, they found:',
+      choiceText:
+        'Drew up a plan to invade the Piggy homeworld with a giant armada.'
+    },
+    {
+      id: 71,
+      text:
+        'And they quickly set about gathering gear and their small band to go after the King on the Piggy home world.  They were ready quickly and took their journey to the Piggy home world.',
+      choices: [57, 58],
+      prompt: 'When they arrived, they found:',
+      choiceText: 'Decided stealth would be their best bet.'
+    },
+    {
+      id: 72,
+      text:
+        'The nuggets proved very effective, being saturated with extremely potent chemicals.  Their ship flew!  (and the emissions were foul)  Sooner than expected, they arrived at the Piggy homeworld in the Sty system.',
+      choices: [57, 58],
+      prompt:
+        'But for all their quick travel, when they arrived they discovered:',
+      choiceText: 'Use the nuggets to power their ship to travel faster.'
+    },
+    {
+      id: 73,
+      text:
+        'They would relish the opportunity to apply the sickening power of the nuggets against these fiendish King-nappers.  The hasted to the battle, arriving at the Piggy home world ready for a gruesome ordeal.  And they would get it!',
+      choices: [57, 58],
+      prompt: 'Because when they exited their craft, they found:',
+      choiceText:
+        'Use the nuggets as cruel and unusual punishment against the Pigs when they arrived.'
+    },
+    {
+      id: 74,
+      text:
+        'It broke his heart to have his son rise up against him.  It sickened him when he realized his son had aligned himself with the treacherous Cyborg Pigs.  They were no friend to his kingdom.',
+      choices: [76, 77],
+      prompt: 'When the Pigs arrived they:',
+      choiceText: 'Relented and let his treacherous son detain him.'
+    },
+    {
+      id: 75,
+      text:
+        'His son had risen up against his own father.  Who had poisoned his mind, bringing him to do this?  Then the Cyborg Pigs, conspirators with his son, entered the chamber.  This was not good for the kingdom!  He signaled his protectors, the Future Knights!  They came at once!',
+      choices: [57, 58],
+      prompt: 'When they made it to the throne room, they discovered that:',
+      choiceText: 'He knew that he was overpowered and relented.'
+    },
+    {
+      id: 76,
+      text:
+        'The King was in grief for his son and his kingdom.  Both seemed on the verge of being lost.  The Pigs wrenched him from his throne.  He knew he was in trouble and sent a distress signal to his protectors, the Future Knights.',
+      choices: [78, 79],
+      prompt: 'When they received the call:',
+      choiceText:
+        "Violently cut the King's son out of the deal.  They were now in charge."
+    },
+    {
+      id: 77,
+      text:
+        'And soon it was clear that the Pigs did not plan to honor even their co-conspirator, his son.  They struck him down and detained the King for their own.  King Glitmore immediately signalled his protectors, the Future Knights.',
+      choices: [78, 59],
+      prompt: 'When they received the call:',
+      choiceText:
+        "Pretended to follow the son's orders, but the King sensed something more sinister."
+    },
+    {
+      id: 78,
+      text:
+        'It was too late to trap the Pigs on-world, so they pursued them through endless space, all the way to the Piggy homeworld in the Sty system.  The battle would be vast!  They landed,',
+      choices: [57, 58],
+      prompt: 'but soon discovered that:',
+      choiceText: 'They knew the King was in trouble and rushed to his aid.'
+    },
+    {
+      id: 79,
+      text:
+        'At least someone in the kingdom was limber and well-practiced in vigilance.  The Knights discovered the Cyborg Pigs had fled with their sovereign.  The purused them all the way to the Piggy homeworld in the Sty system.',
+      choices: [57, 58],
+      prompt: 'When they arrived, they found:',
+      choiceText:
+        'They already knew the well-practiced drill and ran to the rescue of the King.'
     }
   ]
 }
