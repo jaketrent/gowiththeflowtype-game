@@ -8,3 +8,8 @@
   background: var(--colorsPrimary);
   color: var(--colorsContrast);
 }
+.rewind {
+  margin-left: auto;
+  color: var(--colorsContrast);
+  text-decoration: none;
+}

@@ -4,8 +4,12 @@ import data from '../data'
 
 import type { Narrative, NarrativeId } from './types'
 
+// TODO: can remove parseInt? -- should be number
 export const find = (id: NarrativeId): ?Narrative =>
   data.narratives.find(n => n.id === parseInt(id, 10))
+
+export const filterWithChoice = (id: NarrativeId): Narrative[] =>
+  data.narratives.filter(n => (n.choices || []).indexOf(id) > -1)
 
 export const getChoices = (narrative: Narrative): Narrative[] =>
   Array.isArray(narrative.choices)

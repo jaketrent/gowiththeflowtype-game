@@ -49,7 +49,7 @@ const choices = props =>
 const index = style(css)(
   props => html`
   <div class="${css.index}">
-    ${title()}
+    ${title({ narrative: props.narrative })}
     <div class="${css.content}">
       <div>
         ${image(props)}
