@@ -5,6 +5,7 @@ const postcssImport = require('postcss-import')
 const cssnext = require('postcss-cssnext')
 
 module.exports = {
+  mode: process.env.NODE_ENV || 'development',
   devtool: 'cheap-eval-source-map',
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
