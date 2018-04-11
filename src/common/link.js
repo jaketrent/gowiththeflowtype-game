@@ -4,6 +4,5 @@ import type { Props } from './types'
 
 import { html } from 'lit-html'
 
-// TODO: make class quotes "" standard
 export default (props: Props) =>
-  html`<a href=${props.href} class=${props.css.link}>${props.label}</a>`
+  html`<a href="${props.href}" class="${props.css.link}">${props.label}</a>`

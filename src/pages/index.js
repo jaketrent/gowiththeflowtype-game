@@ -11,7 +11,7 @@ import { link, style, title } from '../common'
 const prompt = ({ css, narrative }) =>
   narrative.prompt &&
   html`
-  <div class=${css.prompt}>
+  <div class="${css.prompt}">
     ${narrative.prompt}
   </div>
 `
@@ -19,15 +19,15 @@ const prompt = ({ css, narrative }) =>
 const image = ({ css, narrative }) =>
   narrative.image &&
   html`
-  <img src=${narrative.image} />
+  <img src="${narrative.image}" />
 `
 
 const text = ({ css, narrative }) => html`
-  <p class=${css.text}>${narrative.text}</p>
+  <p class="${css.text}">${narrative.text}</p>
 `
 
 const choice = ({ css, narrative }) => html`
- <div class=${css.choice}>
+ <div class="${css.choice}">
     ${link({
       css: { link: css.choiceButton },
       href: '/' + narrative.id,
@@ -38,7 +38,7 @@ const choice = ({ css, narrative }) => html`
 
 const choices = props =>
   html`
-  <div class=${props.css.choices}>
+  <div class="${props.css.choices}">
     ${narratives
       .getChoices(props.narrative)
       .map(n => choice({ ...props, narrative: n }))}
