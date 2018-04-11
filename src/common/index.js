@@ -1,3 +1,5 @@
+// @flow
+
 import aLink from './link'
 import aStyle from './style'
 import aTitle from './title'
