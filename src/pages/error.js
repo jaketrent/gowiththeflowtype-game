@@ -1,9 +1,8 @@
 // @flow
 
 import { html, render } from 'lit-html'
-import page from 'page'
 
-import type { RouteContext } from '../common/types'
+import type { RouteContext, Router } from '../common/types'
 
 import css from './error.css'
 import { link, style, title } from '../common'
@@ -18,7 +17,7 @@ const error = style(css)(
 `
 )
 
-export default (ctx: RouteContext) => {
+export default (_: Router, ctx: RouteContext) => {
   render(
     error({ code: ctx.params.code || '404' }),
     document.getElementById('app')

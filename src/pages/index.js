@@ -1,9 +1,8 @@
 // @flow
 
 import { html, render } from 'lit-html'
-import page from 'page'
 
-import type { RouteContext } from '../common/types'
+import type { RouteContext, Router } from '../common/types'
 
 import css from './index.css'
 import * as narratives from '../narratives'
@@ -64,8 +63,8 @@ const index = style(css)(
 `
 )
 
-export default (ctx: RouteContext) => {
+export default (router: Router, ctx: RouteContext) => {
   const narrative = narratives.find(ctx.params.id)
   if (narrative) render(index({ narrative }), document.getElementById('app'))
-  else page.redirect('/error/404')
+  else router.redirect('/error/404')
 }
