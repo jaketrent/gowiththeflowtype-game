@@ -4,7 +4,6 @@ import data from '../data'
 
 import type { Narrative, NarrativeId } from './types'
 
-// TODO: can remove parseInt? -- should be number
 export const find = (id: NarrativeId): ?Narrative =>
   data.narratives.find(n => n.id === parseInt(id, 10))
 
