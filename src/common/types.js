@@ -10,6 +10,8 @@ export type Router = {
   redirect: string => void
 }
 
+export type NextFunction = (err?: ?Error) => mixed
+
 export type Css = {
   [string]: string
 }
@@ -17,3 +19,7 @@ export type Css = {
 export type Props = {
   [string]: any
 }
+
+export type Ok<T> = {| ok: true, value: T |}
+export type Err = {| ok: false, error: Error |}
+export type Result<T> = Ok<T> | Err

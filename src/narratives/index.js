@@ -1,6 +1,6 @@
 // @flow
 
-import data from '../data'
+let data = { narratives: [] }
 
 import type { Narrative, NarrativeId } from './types'
 
@@ -15,3 +15,6 @@ export const getChoices = (narrative: Narrative): Narrative[] =>
     ? // https://github.com/facebook/flow/issues/1414
       narrative.choices.map((id: NarrativeId) => find(id)).filter(Boolean)
     : []
+
+export const save = (narratives: ?(Narrative[])) =>
+  narratives ? (data.narratives = narratives) : null

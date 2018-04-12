@@ -1,20 +1,4 @@
-// @flow
-
-import type { Narrative, NarrativeId } from '../narratives/types'
-
-type RawData = {
-  narratives: RawNarrative[]
-}
-
-type RawNarrative = {
-  id: NarrativeId,
-  choiceText?: string,
-  choices?: NarrativeId[],
-  text: string,
-  prompt?: string
-}
-
-const rawData: RawData = {
+module.exports = _ => ({
   narratives: [
     {
       id: 0,
@@ -528,6 +512,4 @@ const rawData: RawData = {
         'They already knew the well-practiced drill and ran to the rescue of the King.'
     }
   ]
-}
-
-export default rawData
+})
