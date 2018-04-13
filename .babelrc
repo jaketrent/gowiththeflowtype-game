@@ -1,11 +1,1 @@
-{
-  "presets": [
-    "stage-2",
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions"]
-      }
-    }],
-    "flow"
-  ]
-}
+{ "presets": ["flow", "stage-2"] }

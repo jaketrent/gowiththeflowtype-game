@@ -12,10 +12,6 @@ export type Router = {
 
 export type NextFunction = (err?: ?Error) => mixed
 
-export type Css = {
-  [string]: string
-}
-
 export type Props = {
   [string]: any
 }

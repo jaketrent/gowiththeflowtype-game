@@ -4,32 +4,25 @@ import { html, render } from 'lit-html'
 
 import type { RouteContext, Router } from '../common/types'
 
-import css from './index.css'
 import * as narratives from '../narratives'
-import { link, style, title } from '../common'
+import { link, title } from '../common'
 
 const prompt = ({ css, narrative }) =>
   narrative.prompt &&
   html`
-  <div class="${css.prompt}">
+  <div class="index__prompt">
     ${narrative.prompt}
   </div>
 `
 
-const image = ({ css, narrative }) =>
-  narrative.image &&
-  html`
-  <img src="${narrative.image}" />
-`
-
 const text = ({ css, narrative }) => html`
-  <p class="${css.text}">${narrative.text}</p>
+  <p class="index__text">${narrative.text}</p>
 `
 
 const choice = ({ css, narrative }) => html`
- <div class="${css.choice}">
+ <div class="index__choice">
     ${link({
-      css: { link: css.choiceButton },
+      className: 'index__choice-button',
       href: '/' + narrative.id,
       label: narrative.choiceText
     })}
@@ -38,20 +31,18 @@ const choice = ({ css, narrative }) => html`
 
 const choices = props =>
   html`
-  <div class="${props.css.choices}">
+  <div>
     ${narratives
       .getChoices(props.narrative)
       .map(n => choice({ ...props, narrative: n }))}
   </div>
 `
 
-const index = style(css)(
-  props => html`
-  <div class="${css.index}">
+const index = props => html`
+  <div class="index">
     ${title({ narrative: props.narrative })}
-    <div class="${css.content}">
+    <div class="index__content">
       <div>
-        ${image(props)}
         ${text(props)}
       </div>
       <div>
@@ -61,7 +52,6 @@ const index = style(css)(
     </div>
   </div>
 `
-)
 
 export default (router: Router, ctx: RouteContext) => {
   const narrative = narratives.find(ctx.params.id)

@@ -4,18 +4,15 @@ import { html, render } from 'lit-html'
 
 import type { RouteContext, Router } from '../common/types'
 
-import css from './error.css'
-import { link, style, title } from '../common'
+import { link, title } from '../common'
 
-const error = style(css)(
-  props => html`
-  <div class="${props.css.content}">
-    <div class="${props.css.text}">Your story has ended in an error.</div>
-    <div class="${props.css.code}">${props.code}</div>
-    <a href="/" class="${props.css.start}">Start over?</a>
+const error = props => html`
+  <div class="error__content">
+    <div class="error__text">Your story has ended in an error.</div>
+    <div class="error__code">${props.code}</div>
+    <a href="/" class="error__start">Start over?</a>
   </div>
 `
-)
 
 export default (_: Router, ctx: RouteContext) => {
   render(

@@ -1,25 +1,25 @@
 // @flow
 
+import type { Props } from './types'
+
 import { html } from 'lit-html'
 
-import css from './title.css'
 import * as narratives from '../narratives'
-import style from './style'
 
-export default style(css)(({ css, narrative }) => {
-  const lastNarratives = narratives.filterWithChoice(narrative.id)
+export default (props: Props) => {
+  const lastNarratives = narratives.filterWithChoice(props.narrative.id)
   return html`
-  <h4 class="${css.title}">
-    <a href="/">
-      <img src="/static/img/title.png" alt="Go with the Flow" />
+  <h4 class="title">
+    <a href="/" class="title__link">
+      Go With the Flow
     </a>
     ${
       lastNarratives[0]
-        ? html`<a class="${css.rewind}" href="/${
+        ? html`<a class="title__rewind" href="/${
             lastNarratives[0].id
           }"><<</button>`
         : null
     }
   </h4>
 `
-})
+}
