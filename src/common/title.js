@@ -1,12 +1,17 @@
 // @flow
 
+import type { Narrative } from '../narratives/types'
 import type { Props } from './types'
 
 import { html } from 'lit-html'
 
 import * as narratives from '../narratives'
 
-export default (props: Props) => {
+type TitleProps = {
+  narrative: Narrative
+} & Props
+
+export default (props: TitleProps) => {
   const lastNarratives = narratives.filterWithChoice(props.narrative.id)
   return html`
   <h4 class="title">

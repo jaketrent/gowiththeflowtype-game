@@ -2,12 +2,17 @@
 
 import { html, render } from 'lit-html'
 
-import type { RouteContext, Router } from '../common/types'
+import type { Narrative } from '../narratives/types'
+import type { Props, RouteContext, Router } from '../common/types'
 
 import * as narratives from '../narratives'
 import { link, title } from '../common'
 
-const prompt = ({ css, narrative }) =>
+type IndexProps = {
+  narrative: Narrative
+} & Props
+
+const prompt = ({ narrative }: IndexProps) =>
   narrative.prompt &&
   html`
   <div class="index__prompt">
@@ -15,11 +20,13 @@ const prompt = ({ css, narrative }) =>
   </div>
 `
 
-const text = ({ css, narrative }) => html`
+const text = ({ narrative }: IndexProps) => html`
   <p class="index__text">${narrative.text}</p>
 `
 
-const choice = ({ css, narrative }) => html`
+const choice = ({ narrative }: IndexProps) =>
+  narrative.choiceText &&
+  html`
  <div class="index__choice">
     ${link({
       className: 'index__choice-button',
@@ -29,7 +36,7 @@ const choice = ({ css, narrative }) => html`
   </div>
 `
 
-const choices = props =>
+const choices = (props: IndexProps) =>
   html`
   <div>
     ${narratives
@@ -38,7 +45,7 @@ const choices = props =>
   </div>
 `
 
-const index = props => html`
+const index = (props: IndexProps) => html`
   <div class="index">
     ${title({ narrative: props.narrative })}
     <div class="index__content">

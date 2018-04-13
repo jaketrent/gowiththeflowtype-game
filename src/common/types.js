@@ -12,9 +12,7 @@ export type Router = {
 
 export type NextFunction = (err?: ?Error) => mixed
 
-export type Props = {
-  [string]: any
-}
+export type Props = {}
 
 export type Ok<T> = {| ok: true, value: T |}
 export type Err = {| ok: false, error: Error |}

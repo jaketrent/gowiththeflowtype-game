@@ -4,5 +4,11 @@ import type { Props } from './types'
 
 import { html } from 'lit-html'
 
-export default (props: Props) =>
+type LinkProps = {
+  className?: string,
+  label: string,
+  href: string
+} & Props
+
+export default (props: LinkProps) =>
   html`<a class="${props.className}" href="${props.href}">${props.label}</a>`
