@@ -12,21 +12,22 @@ type IndexProps = {
   narrative: Narrative
 } & Props
 
-const prompt = ({ narrative }: IndexProps) =>
-  narrative.prompt &&
-  html`
+const prompt = ({ narrative }: IndexProps): ?TemplateResult =>
+  narrative.prompt
+    ? html`
   <div class="index__prompt">
     ${narrative.prompt}
   </div>
 `
+    : null
 
 const text = ({ narrative }: IndexProps) => html`
   <p class="index__text">${narrative.text}</p>
 `
 
-const choice = ({ narrative }: IndexProps) =>
-  narrative.choiceText &&
-  html`
+const choice = ({ narrative }: IndexProps): ?TemplateResult =>
+  narrative.choiceText
+    ? html`
  <div class="index__choice">
     ${link({
       className: 'index__choice-button',
@@ -35,8 +36,9 @@ const choice = ({ narrative }: IndexProps) =>
     })}
   </div>
 `
+    : null
 
-const choices = (props: IndexProps) =>
+const choices = (props: IndexProps): TemplateResult =>
   html`
   <div>
     ${narratives
@@ -45,7 +47,7 @@ const choices = (props: IndexProps) =>
   </div>
 `
 
-const index = (props: IndexProps) => html`
+const index = (props: IndexProps): TemplateResult => html`
   <div class="index">
     ${title({ narrative: props.narrative })}
     <div class="index__content">

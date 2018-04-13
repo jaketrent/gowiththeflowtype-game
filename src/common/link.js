@@ -10,5 +10,5 @@ type LinkProps = {
   href: string
 } & Props
 
-export default (props: LinkProps) =>
+export default (props: LinkProps): TemplateResult =>
   html`<a class="${props.className}" href="${props.href}">${props.label}</a>`
