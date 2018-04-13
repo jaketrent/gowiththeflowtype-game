@@ -80,8 +80,7 @@ button {
   text-decoration: none;
 }
 .index__choice-button:hover,
-.index__choice-button:active,
-.index__choice-button:focus {
+.index__choice-button:active {
   background: var(--colorsPrimary2);
   color: var(--colorsAccent1);
 }
