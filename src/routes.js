@@ -8,10 +8,13 @@ import { fetchNarratives } from './narratives/middleware'
 import index from './pages/index'
 import error from './pages/error'
 
-const route = (
+export const routeWithPage = (
+  page: page,
   path: string,
   ...middleware: ((Router, RouteContext, NextFunction) => mixed)[]
 ) => page(path, ...middleware.map(m => m.bind(null, page)))
+
+const route = routeWithPage.bind(null, page)
 
 export const map = () => {
   route('/', router => router.redirect('/0'))

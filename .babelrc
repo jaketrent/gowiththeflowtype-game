@@ -1,1 +1,8 @@
-{ "presets": ["flow", "stage-2"] }
+{
+  "presets": ["flow", "stage-2"],
+  "env": {
+    "test": {
+      "presets": ["flow", "es2015", "stage-2"]
+    }
+  }
+}

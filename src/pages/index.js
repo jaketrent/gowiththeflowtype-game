@@ -12,7 +12,7 @@ type IndexProps = {
   narrative: Narrative
 } & Props
 
-const prompt = ({ narrative }: IndexProps): ?TemplateResult =>
+export const prompt = ({ narrative }: IndexProps): ?TemplateResult =>
   narrative.prompt
     ? html`
   <div class="index__prompt">
@@ -21,11 +21,11 @@ const prompt = ({ narrative }: IndexProps): ?TemplateResult =>
 `
     : null
 
-const text = ({ narrative }: IndexProps) => html`
+export const text = ({ narrative }: IndexProps) => html`
   <p class="index__text">${narrative.text}</p>
 `
 
-const choice = ({ narrative }: IndexProps): ?TemplateResult =>
+export const choice = ({ narrative }: IndexProps): ?TemplateResult =>
   narrative.choiceText
     ? html`
  <div class="index__choice">

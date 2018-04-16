@@ -10,7 +10,7 @@ type ErrorProps = {
   code: string
 } & Props
 
-const error = (props: ErrorProps): TemplateResult => html`
+export const error = (props: ErrorProps): TemplateResult => html`
   <div class="error__content">
     <div class="error__text">Your story has ended in an error.</div>
     <div class="error__code">${props.code}</div>
