@@ -25,6 +25,5 @@ export class NarrativeStore {
   }
 }
 
-// TODO: rename file store.js
 export const save = (narratives: ?(Narrative[])): NarrativeStore =>
   new NarrativeStore(narratives)

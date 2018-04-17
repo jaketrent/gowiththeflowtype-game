@@ -1,7 +1,8 @@
 // @flow
-const { choice, prompt, text } = require('../index')
+const { choice, prompt, text, title } = require('../index')
 const { NarrativeStore } = require('../../narratives/store')
 
+const narrative = { id: 123, text: 'some text' }
 const store = new NarrativeStore()
 
 describe('#prompt', () => {
@@ -11,10 +12,7 @@ describe('#prompt', () => {
   })
 
   test('not shown if narrative prompt is missing', () => {
-    const actual = prompt({
-      narrative: { id: 123, text: 'some text' },
-      store: new NarrativeStore()
-    })
+    const actual = prompt({ narrative, store })
     expect(actual).toBe(null)
   })
 
@@ -22,7 +20,7 @@ describe('#prompt', () => {
   test('returns html of narrative prompt', () => {
     const narrativePrompt = 'some prompt'
     const actual = prompt({
-      narrative: { id: 123, text: 'some text', prompt: narrativePrompt },
+      narrative: { ...narrative, prompt: narrativePrompt },
       store
     })
     expect(actual).not.toBeNull()
@@ -42,10 +40,7 @@ describe('#text', () => {
   // keep - tests content, not just type
   test('returns html of narrative text', () => {
     const narrativeText = 'some text'
-    const actual = text({
-      narrative: { id: 123, text: narrativeText },
-      store
-    })
+    const actual = text({ narrative, store })
     expect(actual.getHTML()).toEqual(expect.stringMatching(/index__text/))
     expect(actual.values).toEqual(expect.arrayContaining([narrativeText]))
   })
@@ -58,10 +53,7 @@ describe('#choice', () => {
   })
 
   test('not shown if narrative choiceText is missing', () => {
-    const actual = prompt({
-      narrative: { id: 123, text: 'some text' },
-      store
-    })
+    const actual = prompt({ narrative, store })
     expect(actual).toBe(null)
   })
 
@@ -69,7 +61,7 @@ describe('#choice', () => {
   test('returns html of narrative choiceText', () => {
     const narrativeChoice = 'some choice'
     const actual = choice({
-      narrative: { id: 123, text: 'some text', choiceText: narrativeChoice },
+      narrative: { ...narrative, choiceText: narrativeChoice },
       store
     })
     expect(actual).not.toBeNull()
@@ -79,5 +71,32 @@ describe('#choice', () => {
         expect.arrayContaining([narrativeChoice])
       )
     }
+  })
+})
+
+describe('#title', () => {
+  test('takes props arg', () => {
+    expect(title.length).toBe(1)
+  })
+
+  test('returns styled template', () => {
+    const actual = title({ narrative, store })
+    expect(actual.getHTML()).toEqual(expect.stringMatching(/title/))
+    expect(actual.getHTML()).toEqual(expect.stringMatching(/title__link/))
+  })
+
+  test('no rewind button without narratives that led to this choice', () => {
+    const actual = title({ narrative, store })
+    expect(actual.getHTML()).not.toEqual(expect.stringMatching(/title__rewind/))
+  })
+
+  test('rewind button displays when previous narrative with this choice found', () => {
+    const store = new NarrativeStore([
+      { id: 234, text: 'some text', choices: [narrative.id] }
+    ])
+    const actual = title({ narrative, store })
+    expect(actual.values[0].strings[0]).toEqual(
+      expect.stringMatching(/title__rewind/)
+    )
   })
 })

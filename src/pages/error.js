@@ -4,7 +4,7 @@ import { html, render } from 'lit-html'
 
 import type { Props, RouteContext, Router } from '../common/types'
 
-import { link, title } from '../common'
+import link from '../common/link'
 
 type ErrorProps = {
   code: string

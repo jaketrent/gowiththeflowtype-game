@@ -1,12 +1,12 @@
 // @flow
 
-import { html, render } from 'lit-html'
-
 import type { Narrative } from '../narratives/types'
 import type { Props, RouteContext, Router } from '../common/types'
 
+import { html, render } from 'lit-html'
+
+import link from '../common/link'
 import { NarrativeStore } from '../narratives/store'
-import { link, title } from '../common'
 
 type IndexProps = {
   narrative: Narrative,
@@ -16,9 +16,9 @@ type IndexProps = {
 export const prompt = ({ narrative }: IndexProps): ?TemplateResult =>
   narrative.prompt
     ? html`
-  <div class="index__prompt">
-    ${narrative.prompt}
-  </div>
+      <div class="index__prompt">
+        ${narrative.prompt}
+      </div>
 `
     : null
 
@@ -29,13 +29,13 @@ export const text = ({ narrative }: IndexProps) => html`
 export const choice = ({ narrative }: IndexProps): ?TemplateResult =>
   narrative.choiceText
     ? html`
- <div class="index__choice">
-    ${link({
-      className: 'index__choice-button',
-      href: '/' + narrative.id,
-      label: narrative.choiceText
-    })}
-  </div>
+      <div class="index__choice">
+        ${link({
+          className: 'index__choice-button',
+          href: '/' + narrative.id,
+          label: narrative.choiceText
+        })}
+      </div>
 `
     : null
 
@@ -48,9 +48,27 @@ const choices = (props: IndexProps): TemplateResult =>
   </div>
 `
 
+export const title = (props: IndexProps) => {
+  const lastNarratives = props.store.filterWithChoice(props.narrative.id)
+  return html`
+  <h4 class="title">
+    <a href="/" class="title__link">
+      Go With the Flow
+    </a>
+    ${
+      lastNarratives[0]
+        ? html`<a class="title__rewind" href="/${
+            lastNarratives[0].id
+          }"><<</button>`
+        : null
+    }
+  </h4>
+`
+}
+
 const index = (props: IndexProps): TemplateResult => html`
   <div class="index">
-    ${title({ id: props.narrative.id, store: props.store })}
+    ${title(props)}
     <div class="index__content">
       <div>
         ${text(props)}
