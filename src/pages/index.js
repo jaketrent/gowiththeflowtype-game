@@ -5,11 +5,12 @@ import { html, render } from 'lit-html'
 import type { Narrative } from '../narratives/types'
 import type { Props, RouteContext, Router } from '../common/types'
 
-import * as narratives from '../narratives'
+import { NarrativeStore } from '../narratives/store'
 import { link, title } from '../common'
 
 type IndexProps = {
-  narrative: Narrative
+  narrative: Narrative,
+  store: NarrativeStore
 } & Props
 
 export const prompt = ({ narrative }: IndexProps): ?TemplateResult =>
@@ -41,7 +42,7 @@ export const choice = ({ narrative }: IndexProps): ?TemplateResult =>
 const choices = (props: IndexProps): TemplateResult =>
   html`
   <div>
-    ${narratives
+    ${props.store
       .getChoices(props.narrative)
       .map(n => choice({ ...props, narrative: n }))}
   </div>
@@ -49,7 +50,7 @@ const choices = (props: IndexProps): TemplateResult =>
 
 const index = (props: IndexProps): TemplateResult => html`
   <div class="index">
-    ${title({ narrative: props.narrative })}
+    ${title({ id: props.narrative.id, store: props.store })}
     <div class="index__content">
       <div>
         ${text(props)}
@@ -63,7 +64,11 @@ const index = (props: IndexProps): TemplateResult => html`
 `
 
 export default (router: Router, ctx: RouteContext) => {
-  const narrative = narratives.find(ctx.params.id)
-  if (narrative) render(index({ narrative }), document.getElementById('app'))
+  const narrative = ctx.store && ctx.store.find(ctx.params.id)
+  if (narrative)
+    render(
+      index({ narrative, store: ctx.store || new NarrativeStore() }),
+      document.getElementById('app')
+    )
   else router.redirect('/error/404')
 }

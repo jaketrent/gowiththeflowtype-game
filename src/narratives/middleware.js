@@ -8,7 +8,7 @@ import type {
 } from '../common/types'
 
 import * as data from './data'
-import * as narratives from './index'
+import * as store from './store'
 
 export const fetchNarratives = async (
   router: Router,
@@ -17,7 +17,7 @@ export const fetchNarratives = async (
 ) => {
   const result = await data.fetchAll()
   if (result.ok) {
-    narratives.save(result.value)
+    ctx.store = store.save(result.value)
     next()
   } else {
     router.redirect('/error/500')

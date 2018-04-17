@@ -1,5 +1,8 @@
 // @flow
 const { choice, prompt, text } = require('../index')
+const { NarrativeStore } = require('../../narratives/store')
+
+const store = new NarrativeStore()
 
 describe('#prompt', () => {
   // removeable -- signature test
@@ -9,7 +12,8 @@ describe('#prompt', () => {
 
   test('not shown if narrative prompt is missing', () => {
     const actual = prompt({
-      narrative: { id: 123, text: 'some text' }
+      narrative: { id: 123, text: 'some text' },
+      store: new NarrativeStore()
     })
     expect(actual).toBe(null)
   })
@@ -18,7 +22,8 @@ describe('#prompt', () => {
   test('returns html of narrative prompt', () => {
     const narrativePrompt = 'some prompt'
     const actual = prompt({
-      narrative: { id: 123, text: 'some text', prompt: narrativePrompt }
+      narrative: { id: 123, text: 'some text', prompt: narrativePrompt },
+      store
     })
     expect(actual).not.toBeNull()
     if (actual) {
@@ -38,7 +43,8 @@ describe('#text', () => {
   test('returns html of narrative text', () => {
     const narrativeText = 'some text'
     const actual = text({
-      narrative: { id: 123, text: narrativeText }
+      narrative: { id: 123, text: narrativeText },
+      store
     })
     expect(actual.getHTML()).toEqual(expect.stringMatching(/index__text/))
     expect(actual.values).toEqual(expect.arrayContaining([narrativeText]))
@@ -53,7 +59,8 @@ describe('#choice', () => {
 
   test('not shown if narrative choiceText is missing', () => {
     const actual = prompt({
-      narrative: { id: 123, text: 'some text' }
+      narrative: { id: 123, text: 'some text' },
+      store
     })
     expect(actual).toBe(null)
   })
@@ -62,7 +69,8 @@ describe('#choice', () => {
   test('returns html of narrative choiceText', () => {
     const narrativeChoice = 'some choice'
     const actual = choice({
-      narrative: { id: 123, text: 'some text', choiceText: narrativeChoice }
+      narrative: { id: 123, text: 'some text', choiceText: narrativeChoice },
+      store
     })
     expect(actual).not.toBeNull()
     if (actual) {

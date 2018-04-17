@@ -1,8 +1,11 @@
 // @flow
 
+import type { NarrativeStore } from '../narratives/store'
+
 export type Id = number
 
 export type RouteContext = {
+  store?: NarrativeStore,
   params: { [string]: any }
 }
 
