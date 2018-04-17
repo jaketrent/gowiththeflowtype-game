@@ -1,10 +1,8 @@
 {
-  "presets": ["flow"],
-  "plugins": ["transform-object-rest-spread"],
+  "presets": ["flow", "stage-2"],
   "env": {
     "test": {
-      "presets": ["flow", "es2015"],
-      "plugins": ["transform-object-rest-spread"]
+      "presets": ["flow", "es2015", "stage-2"]
     }
   }
 }
