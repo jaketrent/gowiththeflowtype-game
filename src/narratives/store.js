@@ -1,7 +1,5 @@
 // @flow
 
-let data = { narratives: [] }
-
 import type { Narrative, NarrativeId } from './types'
 
 export class NarrativeStore {

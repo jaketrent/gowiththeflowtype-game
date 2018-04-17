@@ -10,7 +10,8 @@ import type {
 import * as data from './data'
 import * as store from './store'
 
-export const fetchNarratives = async (
+export const fetchNarrativesWithData = async (
+  data: { fetchAll: () => Promise<Result<?(Narrative[])>> },
   router: Router,
   ctx: RouteContext,
   next: NextFunction
@@ -23,3 +24,5 @@ export const fetchNarratives = async (
     router.redirect('/error/500')
   }
 }
+
+export const fetchNarratives = fetchNarrativesWithData.bind(null, data)
