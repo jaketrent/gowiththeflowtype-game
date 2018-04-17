@@ -1,5 +1,5 @@
 // @flow
-import fetch from 'node-fetch'
+import defaultFetch from 'node-fetch'
 
 import type { Narrative } from './types'
 import type {
@@ -9,7 +9,9 @@ import type {
   Router
 } from '../common/types'
 
-export const fetchAll = async (): Promise<Result<?(Narrative[])>> => {
+export const fetchAll = async (
+  fetch: defaultFetch = defaultFetch
+): Promise<Result<?(Narrative[])>> => {
   try {
     const res = await fetch('http://localhost:1338/api/v1/narratives')
     const json = await res.json()
